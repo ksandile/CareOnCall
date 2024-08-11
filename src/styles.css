@@ -21,14 +21,23 @@ body {
   justify-content: space-around;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .map-container {
-  padding: 20px;
-  background-color: #f4f4f4;
+  width: 100%;
+  height: 400px;
+  margin-top: 20px; /* Adjust margin as needed */
+  z-index: 10;
 }
 
 .map {
-  height: 200px;
-  background-color: #ccc;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #ccc; /* Optional */
 }
 
 .service-list {
@@ -65,9 +74,4 @@ body {
 
 .service-card button:hover {
   background-color: #45a049;
-}
-
-#map-container {
-  width: 100%;
-  height: 400px;
 }

@@ -1,27 +1,22 @@
-// MapComponent.js
+// MapComponent.jsx
 import React from 'react';
-import { GoogleMap, Marker } from '@react-google-maps/api';
+import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import { useGoogleMaps } from './GoogleMapsProvider'; // Adjust the import path as needed
 
-const MapComponent = () => {
-    const containerStyle = {
-        width: '100%',
-        height: '400px'
-    };
+const MapComponent = ({ center }) => {
+  const { isLoaded } = useGoogleMaps();
 
-    const center = {
-        lat: -3.745,  // Replace with the desired latitude
-        lng: -38.523  // Replace with the desired longitude
-    };
+  if (!isLoaded) return <div>Loading map...</div>;
 
-    return (
-        <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={center}
-            zoom={10}
-        >
-            <Marker position={center} />
-        </GoogleMap>
-    );
+  return (
+    <GoogleMap
+      mapContainerStyle={{ height: "400px", width: "800px" }}
+      center={center}
+      zoom={10}
+    >
+      {/* Add any map markers or other components here */}
+    </GoogleMap>
+  );
 };
 
 export default MapComponent;
