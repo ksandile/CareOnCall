@@ -1,0 +1,13 @@
+{
+  "name": "CareOnCall",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "dependencies": {
+    "@react-native/metro-config": "^0.74.87",
+    "metro": "^0.80.10",
+    "react-native": "0.74.5"
+  }
+}
